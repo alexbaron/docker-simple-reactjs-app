@@ -3,6 +3,7 @@ import { Card } from 'react-bootstrap';
 import axios from 'axios';
 import Image from './ImageDisplay';
 import Products from "./Products";
+import Form from "./Form";
 
 // This Component is a child Component of Customers Component
 export default class CustomerDetails extends Component {
@@ -52,6 +53,7 @@ export default class CustomerDetails extends Component {
               // here price is not passed to the component to show the default value
               // price={1000}
               />
+              <Form />
             </div>
           ) : (
             <p>Loading...</p>
