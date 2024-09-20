@@ -28,7 +28,7 @@ You should see :
 ## Concepts to learn per branch
 
 1. Creating a Component in React
-2. Props and State
+2. [Props and State](./docs/props_state_and_useState.md)
    1. Props
    2. State
       1. Local state
@@ -57,104 +57,6 @@ You should see :
     1. Architecture
     2. Naming conventions
     3. Documentation
-
-## Creating a Component in React
-
-Goal : create a component to show an image related to a customer.
-
-1. Add some fixtures in the json data
-   1. Create a folder to store images : assets/img
-   2. Add one jpg file per customer in the folder
-   3. Add reference to each image in the json
-
-ex : customer1.json
-
-```json
-   "picture": "customer1.jpg"
-```
-
-2. Create a new class in charge of displaying the image when loading the customer details
-  ie: ImageDisplay.js
-1. Important : here we use props to be able to inject variables in the constructor.
-
-```js
-const { width, height, imageName } = this.props;
-```
-
-1. Import the ImageDisplay to be able to use it.
-   1. the import is done in the CustomerDetails.js file
-2. Use the new component to load and display the image
-
-```js
-<Image width='200' height='200' imageName={customerDetails.picture}></Image>
-```
-
-## Props
-
-- props means 'properties'
-- props are a type of object
-- props are immutable
-- props can be passed between components as arguments are passed to function
-- To access props in a component , we use this.props
-- props are used both in functional and class components
-- Props are passed top to bottom
-
-In the branch
-
-- Create a new component Product.js
-- the product should show a name , a decription and a price
-- name, description and price must be passed as props
-
-```js
- <Products
-    name="temitope"
-    description="the product has fantastic features"
-    price={1000}
-  />
-```
-
-### DefaultProps
-
-The defaultProps is a React component property that allows us to set default values for the props argument. It usually comes in handy when we don’t have any props data passed in.
-
-But DefaultProps will be deprecated in future version. The alternative is to use [JavaScript default parameters](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Default_parameters)
-
-## State
-
-- State is a javascript object
-- State aren't immutable
-- State change asynchronously
-- They hold information about the components
-- They cannot be accessed by a child component
-- State is used for rendering dynamic changes
-- States can’t make components reusable
-
-```js
-const [count, setCount] = useState(0);
-```
-
-How to use it in a component
-
-```js
-import React, { useState } from 'react';
-
- function Counter() {
-   const [count, setCount] = useState(0);
-
-   const incrementCounter = () => {
-     setCount(count + 1);
-   };
-
-   return (
-     <div>
-       <p>Count: {count}</p>
-       <button onClick={incrementCounter}>Increment</button>
-     </div>
-   );
- }
-
- export default Counter;
-```
 
 ## Hook
 
