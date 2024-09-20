@@ -117,6 +117,8 @@ In the branch
 
 The defaultProps is a React component property that allows us to set default values for the props argument. It usually comes in handy when we don’t have any props data passed in.
 
+But DefaultProps will be deprecated in future version. The alternative is to use [JavaScript default parameters](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Default_parameters)
+
 ## State
 
 - State is a javascript object
